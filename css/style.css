@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+/*18. dodajemo url font*/
+
+:root {/*31. dodajemo varijable*/
+  --primary-color: #f60f20;
+  --secondary-color: #1b206e;
+}
+
+/*BASE STYLES*/
+
+* { /*19. dodajemo elementima slj vrijednosti*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, /*20. dodajemo font slova i boju slova html fajlu*/
+ body {
+    font-family: 'Poppins', sans-serif;
+    color: #111;
+}
+
+h1 { /*26. stiliziramo*/
+    font-size: 30px;
+    font-weight: 500;
+}
+  
+p { /*27. stiliziramo*/
+    margin: 20px 0 10px;
+    font-size: 1.1rem ;
+}
+
+section { /*24. stiliziramo*/
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  padding: 100px;
+  margin-top: 60px;
+}
+
+section.home { /*50. stiliziramo*/
+   flex-direction: row;
+   margin-top: 0;
+}
+
+/*BUTTON*/
+.btn { /*28. stiliziramo*/
+  cursor: pointer;
+  display: inline-block;
+  background: var(--primary-color); /*32. dodajemo varijablu za boju*/
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin: 20px 0;
+  border:0;
+}
+
+.btn:hover { /*29. stiliziramo*/
+  transform: scale(0.98);
+}
+
+.logo { /*22. stiliziramo */
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 20;
+}
+
+/*TOGGLE*/
+.toggle { /*30. stiliziramo*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color) url(../images/menu.png); /*33. dodajemo varijablu*/
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.toggle.active { /*34. stiliziramo*/
+  background: var(--primary-color) url(../images/close.png);
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*NAVIGATION*/
+.navigation { /*21. stiliziramo dodajemo display: none*/ 
+  /*35. ponovo stiliziramo uklanjamo display:none */
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index:15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation.active { /*36. stiliziramo*/
+  left: 0;
+}
+
+.navigation ul { /*37. stiliziramo*/
+  position: relative;
+}
+
+.navigation ul li { /*38. stiliziramo*/
+  position: relative;
+  list-style: none;
+  text-align: center;
+}
+
+.navigation ul li a { /*39. stiliziramo*/
+  font-size: 2.2rem;
+  color: #111;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.navigation ul li a:hover { /*40. stiliziramo*/
+  color: var(--primary-color);
+}
+
+.navigation .social-bar { /*41. stiliziramo*/
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation .social-bar a { /*43. stiliziramo i otvaramo js fajl*/
+   display: inline-block;
+   transform: scale(0.5);
+}
+
+.navigation .email-icon { /*42. stiliziramo*/
+  position: absolute;
+  bottom: 20px;
+  transform: scale(0.5);
+}
+
+/*HOMEPAGE*/
+.home-content { /*25. stiliziramo*/
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+}
+
+.home-img { /*23. stiliziramo*/
+   position: absolute;
+   bottom: 0;
+   right:0 ;
+   height: 110%;
+}
+
+/*SERVICES PAGE */
+
+.services { /*52. stiliziramo */
+   margin-top: 40px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 40px;
+   text-align: center;
+}
+
+.services .service { /*54. stiliziramo*/
+   padding: 30px;
+}
+
+.services .service:hover { /*55. stiliziramo*/
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.services .service h2 { /*56. stiliziramo*/
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 20px;
+  color: var(--secondary-color);
+}
+
+.services .service .icon .img { /*53. stiliziramo*/
+    max-width: 100px;
+}
+
+/*WORK PAGE*/
+
+.portfolio {/*61. stiliziramo*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.portfolio .item { /*62. stiliziramo*/
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+  }
+
+.portfolio .item .img { /*63. stiliziramo*/
+  width: 100%;
+  height: 100%;
+}
+
+.porfolio .item .action { /*64. stiliziramo*/ 
+   position: absolute;
+   top:0;
+   left:0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0,0,0,0.8);
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   opacity: 0;
+   transition: 0.5s;
+}
+
+.porfolio .item:hover .action { /*66. stiliziramo*/
+ opacity: 1;
+}
+
+.portfolio .item .action a { /*65. stiliziramo*/
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 5px 15px;
+}
+
+/* CONTACT */
+
+.contact { /*75. stiliziramo*/
+   position: relative;
+   width: 100%;
+   margin-top: 50px;
+   display: flex;
+   justify-content:space-between;
+   align-items: flex-start;
+}
+
+.contact-form { /*76. stiliziramo*/
+  position: relative;
+  background: #f9f9f9;
+  width: calc(100%-400px);
+  padding: 60px 40px 20px;
+}
+
+.contact-form form { /*77. stiliziramo*/
+  width: 100%;
+}
+
+.contact-form .row { /*78. stiliziramo*/
+  width: 100%;
+  display: flex;
+}
+
+.contact-form .input50 { /*79. stiliziramo*/
+   width: 50%;
+   margin: 0 10px;
+}
+
+.contact-form .input100 { /*80. stiliziramo*/
+  width: 100%;
+  margin: 0 10px;
+}
+
+.contact-form .row input, /*81. stiliziramo*/
+.contact-form .row textarea {
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  color: #111;
+  background: transparent;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 10px 0;
+  resize: none;
+}
+
+.contact-form .row textarea { /*82. stiliziramo*/
+   height: 150px;
+}
+
+.contact-form .row input[type='submit'] { /*83. stiliziramo*/
+  background-color: var(--secondary-color);
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+  border: 0;
+  cursor: pointer;
+}
+
+.contact-info { /*84. stiliziramo*/
+  width:350px;
+  background: #f9f9f9;
+  padding: 60px 40px 20px;
+}
+
+.contact-info .info-box { /*85. stiliziramo*/
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.contact-info .info-box .contact-icon { /*86. stiliziramo*/
+  width: 20px;
+  margin-right: 40px;
+}
+
+.contact-info .info-box .details h4{ /*87. stiliziramo*/
+  color:var(--secondary-color);
+}
+
+.contact-info .info-box .details p, /*88. stiliziramo*/
+.contact-info .info-box .details a {
+  color: #111;
+}
+
+@media (max-width: 1068px){ 
+  /*45. stiliziramo i kreiramo novi html fajl services */
+  .home-img {
+    display:none;
+  }
+
+  .logo {
+    top: 10px;
+    left: 40px;
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 100px 40px;
+  }
+
+  .navigation ul li a {
+    font-size: 2rem;
+  }
+
+  .services { /*57. stiliziramo */
+    grid-template-columns: repeat(2, 1fr);
+   
+ }
+ .contact {/*89. stiliziramo*/
+   flex-direction: column;
+ }  
+
+ .contact-form { /*90. stiliziramo*/
+   width: 100%;
+   padding: 30px 30px 20px;
+ }
+ .contact-form .row { /*91. stiliziramo*/
+   flex-direction: column;
+ }
+
+ .contact-form .input50, /*92. stiliziramo*/
+ .contact-form .input100 {
+  width: 100%;
+  margin: 0;
+ }
+
+ .contact-info { /*92. stiliziramo*/
+  width: 100%;
+  margin-top: 20px;
+  padding: 30px 30px 20px;
+ }
+}
+
+@media (max-width: 768px) {  
+  /*58. dodajemo @media i kreiramo work.html fajl*/
+   .services {
+     grid-template-columns: repeat(1, 1fr );
+     }
+
+     .services .service {
+        /*67. stiliziramo i kreiramo contact.html fajl*/
+       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+     }
+}
+
+
